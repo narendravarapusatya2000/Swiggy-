@@ -11,9 +11,11 @@ const useRestaurant =(resId)=>{
       }, []);
     
    const fetchMenu = () => {
-        const json = MENU_DATA.find(obj=> obj.id===resId)
-        console.log(json)
+        const json = MENU_DATA.find(obj => obj.id == resId);
+
+        if (json) {
         setResInfo(json.data);
+          }
       };
 
     return resInfo;
