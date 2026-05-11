@@ -40,7 +40,7 @@ jobs:
 
       # 7️⃣ Build Docker Image
       - name: Build Docker Image
-        run: docker build -t $narendravarapusatya:${{ github.sha }} .
+        run: docker build -t rahamshaik/gabrimage:${{ github.sha }} .
 
       - name: Artifact upload
         uses: actions/upload-artifact@v4
@@ -51,7 +51,7 @@ jobs:
 
       # 8️⃣ Tag Image for DockerHub
       - name: Tag Image
-        run: docker tag $narendravarapusatya:${{ github.sha }} $narendravarapusatya:latest
+        run: docker tag $rahamshaik/gabrimage:${{ github.sha }} $rahamshaik/gabrimage:latest
 
       # 9️⃣ Login to DockerHub
       - name: Login to DockerHub
