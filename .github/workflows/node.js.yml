@@ -7,8 +7,8 @@ on:
 
 env:
   APP_PORT: 3000
-  IMAGE_NAME: narendravarapusatya
-  CONTAINER_NAME: GH-actions-practice-automatic
+  IMAGE_NAME: narendravarapusatya/github-actions
+  CONTAINER_NAME: gabr1_app
 
 jobs:
   job-1:
@@ -40,7 +40,7 @@ jobs:
 
       # 7️⃣ Build Docker Image
       - name: Build Docker Image
-        run: docker build -t rahamshaik/gabrimage:${{ github.sha }} .
+        run: docker build -t $IMAGE_NAME:${{ github.sha }} .
 
       - name: Artifact upload
         uses: actions/upload-artifact@v4
@@ -51,8 +51,14 @@ jobs:
 
       # 8️⃣ Tag Image for DockerHub
       - name: Tag Image
-        run: docker tag $rahamshaik/gabrimage:${{ github.sha }} $rahamshaik/gabrimage:latest
+        run: docker tag $IMAGE_NAME:${{ github.sha }} $IMAGE_NAME:latest
 
+      - name: Push SHA Image
+        run: docker push $IMAGE_NAME:${{ github.sha }}
+
+      - name: Push Latest Image
+        run: docker push $IMAGE_NAME:latest
+        
       # 9️⃣ Login to DockerHub
       - name: Login to DockerHub
         uses: docker/login-action@v3
