@@ -8,7 +8,7 @@ on:
 env:
   APP_PORT: 3000
   IMAGE_NAME: narendravarapusatya
-  CONTAINER_NAME: gabr1_app
+  CONTAINER_NAME: GH-actions-practice-automatic
 
 jobs:
   job-1:
