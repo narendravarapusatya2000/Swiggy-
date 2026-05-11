@@ -28,7 +28,7 @@ jobs:
 
       # 3️⃣ Install Dependencies
       - name: Install Dependencies
-        run: node.js.yml
+        run: npm install
 
       # 4️⃣ Clean
       - name: Clean Old Build
