@@ -46,6 +46,13 @@ jobs:
       - name: Build Docker Image
         run: docker build -t $IMAGE_NAME:${{ github.sha }} .
 
+      - name: Artifact upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact-1
+          path: |
+             package*
+
       # 8️⃣ Tag Image for DockerHub
       - name: Tag Image
         run: docker tag $IMAGE_NAME:${{ github.sha }} $IMAGE_NAME:latest
