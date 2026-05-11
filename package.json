@@ -13,7 +13,7 @@
   "license": "ISC",
   "author": "nayan-dubey",
   "type": "commonjs",
-  "main": "jest.config.js",
+  "main": "jest.config.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
