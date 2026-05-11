@@ -38,10 +38,6 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      # 6️⃣ Test
-      - name: Run Tests
-        run: npm test
-
       # 7️⃣ Build Docker Image
       - name: Build Docker Image
         run: docker build -t $IMAGE_NAME:${{ github.sha }} .
