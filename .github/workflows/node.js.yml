@@ -7,7 +7,7 @@ on:
 
 env:
   APP_PORT: 3000
-  IMAGE_NAME: narendravarapusatya
+  IMAGE_NAME: narendravarapusatya/github-actions
   CONTAINER_NAME: GH-actions-practice-automatic
 
 jobs:
