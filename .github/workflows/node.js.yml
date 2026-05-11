@@ -52,12 +52,6 @@ jobs:
       # 8️⃣ Tag Image for DockerHub
       - name: Tag Image
         run: docker tag $IMAGE_NAME:${{ github.sha }} $IMAGE_NAME:latest
-
-      - name: Push SHA Image
-        run: docker push $IMAGE_NAME:${{ github.sha }}
-
-      - name: Push Latest Image
-        run: docker push $IMAGE_NAME:latest
         
       # 9️⃣ Login to DockerHub
       - name: Login to DockerHub
